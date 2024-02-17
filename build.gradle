@@ -38,6 +38,7 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+
 }
 
 jacocoTestReport {
@@ -48,6 +49,7 @@ jacocoTestReport {
 
 test {
     finalizedBy jacocoTestReport // report is always generated after tests run
+    jvmArgs("-XX:+EnableDynamicAgentLoading")
 }
 jacocoTestReport {
     dependsOn test // tests are required to run before generating the report
