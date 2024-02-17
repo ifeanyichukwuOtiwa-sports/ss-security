@@ -1,0 +1,25 @@
+[versions]
+spring-boot = "3.2.2"
+spring-dependency-management = "1.1.4"
+mysql-version = "8.3.0"
+
+[libraries]
+spring-boot-starter-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
+spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
+spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+
+lombok = { module = "org.projectlombok:lombok" }
+mysql = { module = "com.mysql:mysql-connector-j", version.ref = "mysql-version"}
+
+liquibase-core = { module = "org.liquibase:liquibase-core" }
+
+
+testcontainers-mysql = { module = "org.testcontainers:mysql" }
+testcontainers-junit-jupiter = { module = "org.testcontainers:junit-jupiter" }
+spring-boot-testcontainers = { module = "org.springframework.boot:spring-boot-testcontainers" }
+
+
+[plugins]
+
+spring-boot-plugin = { id = "org.springframework.boot", version.ref = "spring-boot" }
+spring-dependency-management-plugin = { id = "io.spring.dependency-management", version.ref = "spring-dependency-management" }

@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    alias(libs.plugins.spring.boot.plugin)
+    alias(libs.plugins.spring.dependency.management.plugin)
+}
+
+group = 'io.wintech'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '21'
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation libs.spring.boot.starter.data.jpa
+    implementation libs.spring.boot.starter.web
+    implementation libs.liquibase.core
+    compileOnly libs.lombok
+    runtimeOnly libs.mysql
+    annotationProcessor libs.lombok
+    testImplementation libs.spring.boot.starter.test
+    testImplementation libs.testcontainers.mysql
+    testImplementation libs.testcontainers.junit.jupiter
+    testImplementation libs.spring.boot.testcontainers
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
