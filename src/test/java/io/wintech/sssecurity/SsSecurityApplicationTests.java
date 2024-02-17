@@ -15,7 +15,7 @@ class SsSecurityApplicationTests {
 
     @ServiceConnection
     @Container
-    private static final MySQLContainer<?> MYSQL_CONTAINER = new MySQLContainer<>("mysql:8.3.0");
+    private static final MySQLContainer<?> MYSQL_CONTAINER = new MySQLContainer<>("mysql:8.0.29");
 
     @Test
     void contextLoads() {
