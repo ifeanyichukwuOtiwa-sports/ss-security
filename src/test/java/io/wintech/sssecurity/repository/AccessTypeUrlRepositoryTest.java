@@ -16,11 +16,14 @@ class AccessTypeUrlRepositoryTest extends BasePersistenceTest {
 
     @Test
     void findByUrl_with_url() {
-        accessTypeUrlRepository.saveAndFlush(new AccessTypeUrl("/api/test"));
+        final AccessTypeUrl expected = accessTypeUrlRepository.saveAndFlush(new AccessTypeUrl("/api/test"));
 
         assertThat(accessTypeUrlRepository.findByUrl("/api/test"))
                .isNotEmpty()
-                .hasValueSatisfying(t -> assertThat(t.getUrl()).isEqualTo("/api/test"));
+                .hasValueSatisfying(t -> {
+                    assertThat(t.getUrl()).isEqualTo("/api/test");
+                    assertThat(t).usingRecursiveComparison().isEqualTo(expected);
+                });
     }
 
 }

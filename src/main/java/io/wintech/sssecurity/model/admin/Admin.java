@@ -17,7 +17,6 @@ import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
-import java.util.function.Predicate;
 
 @Builder
 @Entity
@@ -31,7 +30,7 @@ public class Admin {
     @Id
     @Column(name = "admin_uuid")
     @Builder.Default
-    private UUID userUuid = UUID.randomUUID();
+    private UUID adminUuid = UUID.randomUUID();
     private String username;
     private String password;
     private String email;

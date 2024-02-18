@@ -31,6 +31,8 @@ class AccessTypeRepositoryTest extends BasePersistenceTest {
 
         final Optional<AccessType> result = accessTypeRepository.findByName(name);
         assertThat(result)
+                .isPresent()
+                .hasValueSatisfying(value -> assertThat(value).usingRecursiveComparison().isEqualTo(expected))
                 .hasValue(expected);
     }
 
