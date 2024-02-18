@@ -17,7 +17,7 @@ abstract class BasePersistenceTest {
 
     @Container
     @ServiceConnection
-    protected static final MySQLContainer<?> mysql = new MySQLContainer<>("mysql:latest");
+    protected static final MySQLContainer<?> mysql = new MySQLContainer<>("mysql:8.0.29");
 
     @Autowired
     protected AccessTypeUrlRepository accessTypeUrlRepository;
