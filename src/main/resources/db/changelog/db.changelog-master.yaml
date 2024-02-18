@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - include:
+      file: "2024-01-25/init-customer-schema.sql"
+      relativeToChangelogFile: true
+  - include:
+      file: "2024-01-26/init-admin-schema.sql"
+      relativeToChangelogFile: true
+  - include:
+      file: "2024-01-28/init-access-roles-schema.sql"
+      relativeToChangelogFile: true
+  - include:
+      file: "2024-01-28/init-access-type-schema.sql"
+      relativeToChangelogFile: true
+  - include:
+      file: "2024-01-28/init-access-type-url.sql"
+      relativeToChangelogFile: true
