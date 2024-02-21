@@ -27,7 +27,7 @@ class AccessRoleRepositoryTest extends BasePersistenceTest {
 
         final AccessRole expectedAccessRole = accessRoleRepository.save(entity);
 
-        final Optional<AccessRole> result = accessRoleRepository.findByName(admin);
+        final Optional<AccessRole> result = accessRoleRepository.findByNameIgnoreCase(admin);
 
         assertThat(result).isPresent()
                 .hasValueSatisfying(value -> assertThat(value).usingRecursiveComparison()
