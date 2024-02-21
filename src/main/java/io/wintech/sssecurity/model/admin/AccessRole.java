@@ -29,6 +29,7 @@ import java.util.UUID;
 @EqualsAndHashCode
 @Table(name = "access_role")
 public class AccessRole {
+    public static final String SUPERADMIN = "superadmin";
 
     @Id
     @Column(unique = true, name = "role_name")
