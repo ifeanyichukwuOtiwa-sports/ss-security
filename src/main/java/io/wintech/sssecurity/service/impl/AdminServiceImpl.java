@@ -113,4 +113,9 @@ public class AdminServiceImpl implements AdminService {
     public void sendPasswordEmail(final String email, final String username, final String password) {
         // TODO; would be completed after adding messaging API
     }
+
+    @Override
+    public Admin updateAdmin(final Admin admin) {
+        return adminRepository.save(admin);
+    }
 }
